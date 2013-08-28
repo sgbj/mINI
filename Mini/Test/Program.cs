@@ -18,6 +18,15 @@ namespace Test
                 }
             }
             ini.Save("Test.ini");
+
+            var ini2 = new IniFile(
+                new IniSection("Application", 
+                    new IniProperty("Host", "127.0.0.1"), 
+                    new IniProperty("Port", "1337")), 
+                new IniSection("User", 
+                    new IniProperty("Username", "User"), 
+                    new IniProperty("Password", "Pass")));
+            ini2.Save("Test2.ini");
         }
     }
 }
