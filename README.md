@@ -7,25 +7,21 @@ Examples
 --------
 
 Load an existing INI file:
-
 ```CSharp
 var ini = IniFile.Load("Test.ini");
 ```
 
 Create a new property or set an existing property's value:
-
 ```CSharp
 ini["Test"]["Key"].Value = "Value";
 ```
 
 Save the INI file:
-
 ```CSharp
 ini.Save("Test.ini");
 ```
 
 Loop through the files sections and properties:
-
 ```CSharp
 foreach (var section in ini.Sections)
 {
@@ -37,8 +33,7 @@ foreach (var section in ini.Sections)
 }
 ```
 
-Result:
-
+Prints:
 ```
 [Test]
 Username=User
@@ -48,7 +43,6 @@ Press any key to continue . . .
 ```
 
 Programmatically create a new INI file:
-
 ```CSharp
 var ini2 = new IniFile(
     new IniSection("Application", 
@@ -60,4 +54,13 @@ var ini2 = new IniFile(
 ini2.Save("Test2.ini");
 ```
 
+Creates a new file with the following contents:
+```
+[Application]
+Host=127.0.0.1
+Port=1337
+[User]
+Username=User
+Password=Pass
 
+```
